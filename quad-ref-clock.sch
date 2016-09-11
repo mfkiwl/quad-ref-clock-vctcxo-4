@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -8636,10 +8636,6 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="C5" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
 <part name="GND9" library="supply1" deviceset="GND" device=""/>
-<part name="R6" library="rcl" deviceset="R-US_" device="R0805" value="43"/>
-<part name="R7" library="rcl" deviceset="R-US_" device="R0805" value="43"/>
-<part name="R8" library="rcl" deviceset="R-US_" device="R0805" value="43"/>
-<part name="R9" library="rcl" deviceset="R-US_" device="R0805" value="43"/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="C3" library="rcl" deviceset="C-EU" device="C0805" value="470pF"/>
 <part name="R1" library="rcl" deviceset="R-US_" device="R0805" value="1k"/>
@@ -8681,6 +8677,10 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <part name="X4" library="con-coax" deviceset="SMA-" device="142-0711-881/886" value="SMA"/>
 <part name="R3" library="rcl" deviceset="R-US_" device="R0805" value="1k"/>
 <part name="R4" library="rcl" deviceset="R-US_" device="R0603" value="49.9"/>
+<part name="R5" library="rcl" deviceset="R-US_" device="R0603" value="43"/>
+<part name="R6" library="rcl" deviceset="R-US_" device="R0603" value="43"/>
+<part name="R7" library="rcl" deviceset="R-US_" device="R0603" value="43"/>
+<part name="R8" library="rcl" deviceset="R-US_" device="R0603" value="43"/>
 </parts>
 <sheets>
 <sheet>
@@ -8709,10 +8709,6 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <instance part="GND8" gate="1" x="165.1" y="152.4"/>
 <instance part="C5" gate="G$1" x="195.58" y="157.48" rot="R90"/>
 <instance part="GND9" gate="1" x="190.5" y="152.4"/>
-<instance part="R6" gate="G$1" x="177.8" y="132.08"/>
-<instance part="R7" gate="G$1" x="177.8" y="121.92"/>
-<instance part="R8" gate="G$1" x="177.8" y="111.76"/>
-<instance part="R9" gate="G$1" x="177.8" y="101.6"/>
 <instance part="GND12" gate="1" x="43.18" y="81.28"/>
 <instance part="C3" gate="G$1" x="80.01" y="96.52" rot="R90"/>
 <instance part="R1" gate="G$1" x="109.22" y="127"/>
@@ -8760,6 +8756,10 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <instance part="X4" gate="G1" x="208.28" y="101.6" rot="MR0"/>
 <instance part="R3" gate="G$1" x="109.22" y="101.6"/>
 <instance part="R4" gate="G$1" x="93.98" y="88.9" rot="R90"/>
+<instance part="R5" gate="G$1" x="177.8" y="132.08"/>
+<instance part="R6" gate="G$1" x="177.8" y="121.92"/>
+<instance part="R7" gate="G$1" x="177.8" y="111.76"/>
+<instance part="R8" gate="G$1" x="177.8" y="101.6"/>
 </instances>
 <busses>
 </busses>
@@ -8981,57 +8981,57 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <net name="N$1" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="Q0"/>
-<pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="154.94" y1="132.08" x2="172.72" y2="132.08" width="0.1524" layer="91"/>
+<pinref part="R5" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$2" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="Q1"/>
-<pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="154.94" y1="121.92" x2="172.72" y2="121.92" width="0.1524" layer="91"/>
+<pinref part="R6" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="Q2"/>
-<pinref part="R8" gate="G$1" pin="1"/>
 <wire x1="154.94" y1="111.76" x2="172.72" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="R7" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
 <pinref part="U1" gate="G$1" pin="Q3"/>
-<pinref part="R9" gate="G$1" pin="1"/>
 <wire x1="154.94" y1="101.6" x2="172.72" y2="101.6" width="0.1524" layer="91"/>
+<pinref part="R8" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$10" class="0">
 <segment>
-<pinref part="R6" gate="G$1" pin="2"/>
 <wire x1="182.88" y1="132.08" x2="205.74" y2="132.08" width="0.1524" layer="91"/>
 <pinref part="X1" gate="G1" pin="1"/>
+<pinref part="R5" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$11" class="0">
 <segment>
-<pinref part="R7" gate="G$1" pin="2"/>
 <wire x1="182.88" y1="121.92" x2="205.74" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="X2" gate="G1" pin="1"/>
+<pinref part="R6" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$12" class="0">
 <segment>
-<pinref part="R8" gate="G$1" pin="2"/>
 <wire x1="182.88" y1="111.76" x2="205.74" y2="111.76" width="0.1524" layer="91"/>
 <pinref part="X3" gate="G1" pin="1"/>
+<pinref part="R7" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$13" class="0">
 <segment>
-<pinref part="R9" gate="G$1" pin="2"/>
 <wire x1="182.88" y1="101.6" x2="205.74" y2="101.6" width="0.1524" layer="91"/>
 <pinref part="X4" gate="G1" pin="1"/>
+<pinref part="R8" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="N$15" class="0">
