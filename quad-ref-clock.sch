@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -8631,7 +8631,6 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="P+1" library="supply1" deviceset="VCC" device=""/>
 <part name="P+2" library="supply1" deviceset="VCC" device=""/>
-<part name="R5" library="rcl" deviceset="R-US_" device="R0805" value="49.9"/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="C4" library="rcl" deviceset="C-EU" device="C0805" value="100n"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
@@ -8681,6 +8680,7 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <part name="X3" library="con-coax" deviceset="SMA-" device="142-0711-881/886" value="SMA"/>
 <part name="X4" library="con-coax" deviceset="SMA-" device="142-0711-881/886" value="SMA"/>
 <part name="R3" library="rcl" deviceset="R-US_" device="R0805" value="1k"/>
+<part name="R4" library="rcl" deviceset="R-US_" device="R0603" value="49.9"/>
 </parts>
 <sheets>
 <sheet>
@@ -8704,7 +8704,6 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <attribute name="VALUE" x="101.6" y="144.78" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="P+2" gate="VCC" x="93.98" y="121.92"/>
-<instance part="R5" gate="G$1" x="93.98" y="88.9" rot="R90"/>
 <instance part="GND7" gate="1" x="93.98" y="81.28"/>
 <instance part="C4" gate="G$1" x="170.18" y="157.48" rot="R90"/>
 <instance part="GND8" gate="1" x="165.1" y="152.4"/>
@@ -8760,6 +8759,7 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <instance part="X3" gate="G1" x="208.28" y="111.76" rot="MR0"/>
 <instance part="X4" gate="G1" x="208.28" y="101.6" rot="MR0"/>
 <instance part="R3" gate="G$1" x="109.22" y="101.6"/>
+<instance part="R4" gate="G$1" x="93.98" y="88.9" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -8799,11 +8799,11 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <segment>
 <pinref part="U1" gate="G$1" pin="LVCMOS_CLK"/>
 <wire x1="114.3" y1="96.52" x2="93.98" y2="96.52" width="0.1524" layer="91"/>
-<pinref part="R5" gate="G$1" pin="2"/>
 <wire x1="93.98" y1="93.98" x2="93.98" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="2"/>
 <wire x1="85.09" y1="96.52" x2="93.98" y2="96.52" width="0.1524" layer="91"/>
 <junction x="93.98" y="96.52"/>
+<pinref part="R4" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -8851,10 +8851,6 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <wire x1="93.98" y1="101.6" x2="93.98" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="GND5" gate="1" pin="GND"/>
 <pinref part="R3" gate="G$1" pin="1"/>
-</segment>
-<segment>
-<pinref part="R5" gate="G$1" pin="1"/>
-<pinref part="GND7" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="C4" gate="G$1" pin="1"/>
@@ -8916,6 +8912,10 @@ Source: www.johnsoncomponents.com .. J502-ND.pdf</description>
 <wire x1="170.18" y1="50.8" x2="160.02" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="50.8" x2="160.02" y2="48.26" width="0.1524" layer="91"/>
 <pinref part="GND20" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="GND7" gate="1" pin="GND"/>
+<pinref part="R4" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$5" class="0">
